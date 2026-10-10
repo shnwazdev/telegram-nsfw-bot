@@ -1,0 +1,24 @@
+services:
+  - type: worker
+    name: telegram-nsfw-shield-bot
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    autoDeploy: true
+    envVars:
+      - key: TELEGRAM_API_ID
+        sync: false
+      - key: TELEGRAM_API_HASH
+        sync: false
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: OWNER_ID
+        sync: false
+      - key: LOG_GROUP_ID
+        sync: false
+      - key: SUPPORT_CHANNEL_URL
+        value: https://t.me/shnwazx
+      - key: DEFAULT_SENSITIVITY
+        value: balanced

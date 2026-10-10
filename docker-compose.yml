@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  telegram-nsfw-bot:
+    build: .
+    container_name: nsfw_shield_bot
+    restart: always
+    env_file:
+      - .env

@@ -1,0 +1,17 @@
+[Unit]
+Description=Telegram NSFW Auto-Delete Shield Bot 24/7
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/telegram-nsfw-bot
+ExecStart=/usr/bin/python3 main.py
+Restart=always
+RestartSec=5
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=telegram-nsfw-bot
+
+[Install]
+WantedBy=multi-user.target
